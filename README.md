@@ -1,218 +1,194 @@
-# ☕ AI 咖啡營運分析平台｜作品集優化版
+# AI 咖啡營運分析平台
 
-## 🌐 線上展示網站
+本專案使用 Coffee Shop Sales 交易資料，建立一套結合資料清洗、商業智慧分析、Power BI Dashboard 與 AI 營收預測概念的咖啡店營運分析作品集。
 
-https://ai-coffee-analysis-platform.onrender.com
-
-本專案已部署於 Render，可直接透過瀏覽器查看系統畫面。  
-第一次開啟可能需要等待 30～60 秒，因為 Render Free 方案閒置後會自動休眠。
-
----
-
-## 專案簡介
-
-這是一個以咖啡店交易資料為基礎的商業智慧與 AI 預測專案，整合資料清洗、營收儀錶板、商品分析、天氣影響分析、AI 營收預測與展店 ROI 分析。
-
-本專案目標是將原始交易資料轉換成可視化決策系統，模擬企業在營運管理、銷售分析、展店評估與 AI 預測上的應用場景。
+> 資料來源為 Maven Analytics 提供的 fictitious coffee shop sales dataset，屬於虛構咖啡店交易資料，適合用於商業分析、AI 預測與作品集展示。
 
 ---
 
 ## 專案目標
 
-透過交易資料建立完整的營運分析系統，協助回答：
+本專案希望回答以下商業問題：
 
 - 哪一家店營收表現最好？
-- 哪些商品最適合主推？
-- 尖峰與離峰時段如何影響營收？
-- 天氣變化是否會影響門市營收？
-- AI 模型能否預測未來營收？
-- 第四家店應該優先考慮哪個區域？
-- 如何將分析結果整理成可展示的作品集專案？
+- 哪些商品最值得主推？
+- 尖峰與離峰時段對營收有什麼影響？
+- 天氣變化是否會影響銷售？
+- 如何透過資料建立更完整的營運決策儀表板？
 
 ---
 
-## 主要功能
+## 專案內容
 
-- 營運 KPI 儀錶板
-- 各門市營收比較
+- 原始交易資料整理
+- 分析用資料欄位標準化
+- Power BI 專用資料集建立
+- 營收 KPI 分析
+- 店鋪績效分析
 - 商品銷售分析
-- 營業時段與尖離峰分析
-- 天氣與銷售影響分析
-- AI 營收預測與模型比較
-- 展店 ROI 分析
-- CSV 上傳測試功能
-- 原始資料與清洗後資料分流管理
-- Render 線上部署展示
-- GitHub 專案版本管理
+- 尖峰 / 離峰分析
+- 天氣與營收影響分析
+- Streamlit / Render 線上展示準備
 
 ---
 
-## 技術工具
-
-- Python
-- Pandas
-- NumPy
-- Streamlit
-- Plotly
-- Scikit-learn
-- XGBoost
-- SQLAlchemy
-- Open-Meteo / Weather features
-- Git / GitHub
-- Render
-
----
-
-## 專案結構
+## 專案架構
 
 ```text
-AI_Coffee_Portfolio_Final/
-├─ app.py
-├─ config.py
-├─ requirements.txt
-├─ requirements_render.txt
-├─ render.yaml
-├─ runtime.txt
-├─ run_app.bat
-├─ .gitignore
+AI_Coffee_GitHub_Ready/
 │
-├─ data/
-│  ├─ Coffee Shop Sales_RAW.csv
-│  ├─ Coffee_Shop_Demo.csv
-│  ├─ location_data.csv
-│  ├─ README_DATA.md
-│  └─ weather_cache/
+├── data/
+│   ├── Coffee_Shop_Sales_RAW.csv
+│   └── Coffee_Shop_PowerBI_Dashboard_Data.csv
 │
-├─ services/
-├─ utils/
-├─ ui/
-│  └─ pages/
-├─ tests/
-├─ reports/
-├─ database/
-├─ modules/
-└─ screenshots/
-```
-
----
-
-## 本機執行方式
-
-### 1. 安裝套件
-
-```bash
-pip install -r requirements.txt
-```
-
-### 2. 啟動系統
-
-```bash
-streamlit run app.py
-```
-
-### 3. Windows 快速啟動
-
-也可以直接執行：
-
-```bat
-run_app.bat
-```
-
----
-
-## Render 部署設定
-
-本專案已部署於 Render。
-
-### Build Command
-
-```bash
-pip install -r requirements_render.txt
-```
-
-### Start Command
-
-```bash
-streamlit run app.py --server.port $PORT --server.address 0.0.0.0
-```
-
-### 部署網址
-
-```text
-https://ai-coffee-analysis-platform.onrender.com
+├── docs/
+│   └── DATA_SUMMARY.json
+│
+├── powerbi/
+│   ├── PowerBI_DAX_Measures.md
+│   └── PowerBI_Dashboard_Guide.md
+│
+├── screenshots/
+│   └── 放置 Power BI 或 Streamlit 截圖
+│
+├── scripts/
+│   └── create_powerbi_data.py
+│
+├── models/
+│   └── 放置訓練完成的模型檔案
+│
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
 
 ---
 
 ## 資料說明
 
-完整資料放在 `data/`，詳細說明請看：
+### `Coffee_Shop_Sales_RAW.csv`
 
-```text
-data/README_DATA.md
-```
+原始交易資料，保留交易日期、時間、店鋪、商品、數量與金額等欄位。
 
-GitHub 版本主要保留展示用資料，例如：
+### `Coffee_Shop_PowerBI_Dashboard_Data.csv`
 
-```text
-Coffee_Shop_Demo.csv
-location_data.csv
-Coffee Shop Sales_RAW.csv
-```
+Power BI 專用資料，已保留 Dashboard 需要的主要欄位，例如：
 
-大型清洗後資料可保留於本機版本，用於完整分析、模型訓練與 Power BI 分析，避免 GitHub 上傳超過檔案限制。
+- 交易日期與時間
+- 店鋪資訊
+- 商品資訊
+- 銷售數量
+- 商品單價
+- 總金額
+- 尖峰 / 離峰狀態
+- 天氣相關欄位
 
----
+### 完整清洗資料說明
 
-## 優化重點
+原本的完整清洗資料 `Coffee_Shop_Enterprise_Features_Corrected.csv` 約 263MB，超過 GitHub 一般單檔 100MB 限制，因此本 GitHub 版本不直接放入該大檔。
 
-本版本已完成：
+如果需要保存完整資料，建議：
 
-- 移除重複 CSV
-- 移除 `__pycache__` 與 `.pyc`
-- 新增 `.gitignore`
-- 新增 `config.py` 統一管理路徑
-- 新增 `requirements_render.txt`
-- 修正 Render 部署設定
-- 整理測試腳本到 `tests/`
-- 建立資料說明與優化報告
-- 修正重複欄位問題
-- 修正天氣分析 `nan` 顯示問題
-- 完成 GitHub 上傳
-- 完成 Render 公開部署
+1. 保存在本機，不上傳 GitHub。
+2. 使用 Git LFS 管理大型檔案。
+3. 只上傳 Power BI 專用精簡資料。
 
 ---
 
-## 專案成果
+## Power BI Dashboard 規劃
 
-本專案可作為：
+建議建立 5 頁 Dashboard：
 
-- 資料分析作品集
-- Python / Streamlit 專案展示
-- AI 預測模型展示
-- 商業智慧 Dashboard 展示
-- 履歷與面試作品展示
-- GitHub 專案管理展示
-- Render 雲端部署展示
+1. 營運總覽
+2. 店鋪績效分析
+3. 商品銷售分析
+4. 尖峰離峰分析
+5. 天氣與營收影響
 
----
-
-## 線上與原始碼
-
-### GitHub Repository
+詳細圖表配置請參考：
 
 ```text
-https://github.com/sorrypower22225/AI-Coffee-Analysis-Platform
+powerbi/PowerBI_Dashboard_Guide.md
 ```
 
-### Render Live Demo
+DAX 指標請參考：
 
 ```text
-https://ai-coffee-analysis-platform.onrender.com
+powerbi/PowerBI_DAX_Measures.md
 ```
 
 ---
 
-## 備註
+## 核心商業洞察
 
-本專案使用的 Coffee Shop Sales 資料為範例交易資料，適合作為資料分析、AI 預測、Power BI、Streamlit 與商業智慧作品集展示用途。
+- 尖峰時段可作為人力排班與備貨的重要依據。
+- 店鋪之間的營收、訂單數與客單價差異，可用於門市營運優化。
+- 商品銷售分析可以找出主力商品與高營收品項。
+- 天氣欄位可作為短期營收預測與營運規劃的輔助特徵。
+
+---
+
+## 使用技術
+
+- Python
+- Pandas
+- Power BI
+- Streamlit
+- Scikit-learn
+- XGBoost
+- GitHub
+- Render
+
+---
+
+## 如何重新產生 Power BI 資料
+
+如果你本機有完整清洗資料：
+
+```text
+data/Coffee_Shop_Enterprise_Features_Corrected.csv
+```
+
+可以執行：
+
+```bash
+python scripts/create_powerbi_data.py
+```
+
+執行後會產生：
+
+```text
+data/Coffee_Shop_PowerBI_Dashboard_Data.csv
+```
+
+---
+
+## 如何執行 Streamlit 專案
+
+如果專案中有 `app.py`，可以執行：
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## GitHub 上傳指令
+
+```bash
+git status
+git add .
+git commit -m "整理咖啡 AI 商業分析專案"
+git push
+```
+
+---
+
+## 後續優化方向
+
+- 新增 Power BI `.pbix` 檔案
+- 新增 Dashboard 截圖到 `screenshots/`
+- 新增 Render 線上展示網址
+- 新增模型評估結果與預測圖表
+- 補上專案簡報 PPT

@@ -1,33 +1,17 @@
-# Python cache
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-
-# Virtual environment
-venv/
+.env
 .venv/
-env/
-
-# System files
+venv/
+.ipynb_checkpoints/
 .DS_Store
 Thumbs.db
 
-# Streamlit secrets
-.streamlit/secrets.toml
+# Power BI 暫存
+*.tmp
 
-# Environment variables
-.env
+# GitHub 單檔限制 100MB；完整版資料建議本機保存或用 Git LFS
+# data/Coffee_Shop_Enterprise_Features_Corrected.csv
 
-# Large backup files
-data/*BACKUP*.csv
-data/*.zip
-
-# Large cleaned dataset for GitHub
 data/Coffee_Shop_Enterprise_Features_Corrected.csv
-
-# Notebook checkpoints
-.ipynb_checkpoints/
-
-# Logs
-*.log
+data/Coffee Shop Sales_RAW.csv

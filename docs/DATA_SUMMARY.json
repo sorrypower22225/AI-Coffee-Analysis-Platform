@@ -1,0 +1,7 @@
+{
+  "raw_rows": 149116,
+  "powerbi_rows": 149116,
+  "powerbi_columns": 46,
+  "powerbi_file": "data/Coffee_Shop_PowerBI_Dashboard_Data.csv",
+  "note": "Full 197-column file is not included because it exceeds GitHub 100MB single-file limit."
+}
