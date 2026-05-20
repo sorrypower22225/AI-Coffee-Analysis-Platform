@@ -1,0 +1,33 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Environment variables
+.env
+
+# Large backup files
+data/*BACKUP*.csv
+data/*.zip
+
+# Large cleaned dataset for GitHub
+data/Coffee_Shop_Enterprise_Features_Corrected.csv
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log

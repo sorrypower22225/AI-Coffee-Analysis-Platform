@@ -1,0 +1,7 @@
+location,near_store,rent_cost,daily_people,competition_score,office_score,mrt_score,holiday_score,latitude,longitude
+Astoria Expansion,Astoria,120000,5500,55,45,70,65,40.7644,-73.9235
+Astoria Center,Astoria,135000,6800,60,50,75,72,40.7612,-73.9190
+Hell's Kitchen East,Hell's Kitchen,210000,9800,88,95,96,80,40.7648,-73.9895
+Hell's Kitchen West,Hell's Kitchen,190000,8700,80,92,90,75,40.7661,-73.9940
+Lower Manhattan North,Lower Manhattan,250000,12000,95,98,99,85,40.7155,-74.0113
+Lower Manhattan South,Lower Manhattan,220000,10500,90,96,95,82,40.7098,-74.0131
